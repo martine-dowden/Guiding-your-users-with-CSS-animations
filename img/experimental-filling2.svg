@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 66.9 96.9" style="enable-background:new 0 0 66.9 96.9;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;stroke:#2B3244;stroke-width:0.8082;stroke-miterlimit:10;}
+	.st1{fill-rule:evenodd;clip-rule:evenodd;fill:#A041A3;stroke:#2B3244;stroke-width:0.8082;stroke-miterlimit:10;}
+	.st2{fill:#FFFFFF;}
+	.st3{fill:none;stroke:#2B3244;stroke-width:0.8082;stroke-miterlimit:10;}
+	.st4{fill-rule:evenodd;clip-rule:evenodd;fill:#A3B4D8;fill-opacity:0;}
+	.st5{fill:#A2FF17;}
+</style>
+<g id="Layer_1">
+	<path class="st0" d="M15.3,39l5.3,5.7c0.5,0.5,0.6,1.3,0.3,2L0.6,94c-0.5,1.2,0.4,2.5,1.7,2.5h62.5c1.3,0,2.2-1.3,1.7-2.5
+		L45.9,46.7c-0.3-0.7-0.2-1.4,0.3-2l5.3-5.7c1.1-1.2,0.3-3-1.3-3H16.6C15,36,14.2,37.9,15.3,39z"/>
+	<path class="st1" d="M66.4,94V60H0.6v34c-0.5,1.2,0.4,2.5,1.7,2.5h62.5C66,96.5,66.9,95.2,66.4,94z"/>
+	<path class="st2" d="M51.8,59.3L66.5,94c0.5,1.2-0.4,2.5-1.7,2.5H2.3c-1.3,0-2.2-1.3-1.7-2.5l14.5-34.7H0v37.6h66.9V59.3H51.8z"/>
+	<path class="st3" d="M66.4,94L51.7,60H15.2L0.6,94c-0.5,1.2,0.4,2.5,1.7,2.5h62.5C66,96.5,66.9,95.2,66.4,94z"/>
+	<g id="bubbles">
+		<circle class="st4" cx="38" cy="37.5" r="9.5"/>
+		<circle class="st4" cx="18.5" cy="18" r="6"/>
+		<circle class="st4" cx="37" cy="3.5" r="3"/>
+		<circle class="st4" cx="37" cy="3.5" r="3.5"/>
+		<circle class="st4" cx="37" cy="3.5" r="3.8"/>
+	</g>
+</g>
+<g id="Layer_2">
+	<path class="st5" d="M47,38.5c0-7.5-6.1-13.6-13.6-13.6c-7.5,0-13.6,6.1-13.6,13.6c0,2.5,0.7,4.9,1.9,6.9l1.5,8.4h20.4l1.5-8.4
+		C46.3,43.3,47,41,47,38.5z"/>
+</g>
+</svg>

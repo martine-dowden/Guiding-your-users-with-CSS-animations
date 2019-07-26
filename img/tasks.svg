@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 408.5 514" style="enable-background:new 0 0 408.5 514;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;stroke:#0A3F7F;stroke-miterlimit:10;}
+	.st1{fill:#7A986E;}
+	.st2{fill:#B4B9BF;}
+	.st3{fill:#A15467;}
+	.st4{fill:#FFFFFF;}
+	.st5{fill:#0A3F7F;}
+</style>
+<polygon class="st0" points="408,513.1 391,502 372.5,511.5 355,503 337,512 318.5,502.5 301.5,511.5 282.5,502.5 265.5,511.5 
+	246.5,502.5 228.5,511.5 210.5,502.5 192.5,511.5 174.5,502.5 156.5,511.5 138.5,502.5 120.5,512.5 113,513.1 113,106 408,106 "/>
+<g>
+	<g>
+		<circle class="st1" cx="363" cy="137.1" r="17"/>
+		
+			<rect x="138" y="128.4" transform="matrix(-1 -4.489310e-11 4.489310e-11 -1 474.5 274.1875)" class="st2" width="198.5" height="17.4"/>
+	</g>
+	<g>
+		<circle class="st1" cx="363" cy="192.8" r="17"/>
+		
+			<rect x="138" y="184.1" transform="matrix(-1 -4.489310e-11 4.489310e-11 -1 474.5 385.5208)" class="st2" width="198.5" height="17.4"/>
+	</g>
+	<g>
+		<circle class="st1" cx="363" cy="248.4" r="17"/>
+		
+			<rect x="138" y="239.7" transform="matrix(-1 -4.489310e-11 4.489310e-11 -1 474.5 496.8542)" class="st2" width="198.5" height="17.4"/>
+	</g>
+	<g>
+		<circle class="st3" cx="363" cy="304.1" r="17"/>
+		
+			<rect x="138" y="295.4" transform="matrix(-1 -4.489310e-11 4.489310e-11 -1 474.5 608.1875)" class="st2" width="198.5" height="17.4"/>
+	</g>
+	<g>
+		<circle class="st3" cx="363" cy="359.8" r="17"/>
+		
+			<rect x="138" y="351.1" transform="matrix(-1 -4.490198e-11 4.490198e-11 -1 474.5 719.5208)" class="st2" width="198.5" height="17.4"/>
+	</g>
+	<g>
+		<circle class="st3" cx="363" cy="415.4" r="17"/>
+		
+			<rect x="138" y="406.7" transform="matrix(-1 -4.490198e-11 4.490198e-11 -1 474.5 830.8542)" class="st2" width="198.5" height="17.4"/>
+	</g>
+	<g>
+		<circle class="st3" cx="363" cy="471.1" r="17"/>
+		
+			<rect x="138" y="462.4" transform="matrix(-1 -4.488377e-11 4.488377e-11 -1 474.5 942.1875)" class="st2" width="198.5" height="17.4"/>
+	</g>
+</g>
+<g>
+	<circle class="st4" cx="145.5" cy="147.5" r="127.5"/>
+	<path class="st5" d="M146.5,0C65.9,0,0,65.9,0,146.5S65.9,293,146.5,293S293,227.1,293,146.5S227.1,0,146.5,0z M146.5,263.7
+		C82,263.7,29.3,211,29.3,146.5S82,29.3,146.5,29.3S263.7,82,263.7,146.5S211,263.7,146.5,263.7z"/>
+	<path class="st5" d="M153.8,73.2h-22v87.9l76.2,45.4l11.7-17.6l-65.9-39.6V73.2z"/>
+</g>
+</svg>

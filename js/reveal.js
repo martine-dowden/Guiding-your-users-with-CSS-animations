@@ -80,7 +80,7 @@
 			// number for the current slide. The function needs to return an array
 			// with one string [slideNumber] or three strings [n1,delimiter,n2].
 			// See #formatSlideNumber().
-			slideNumber: false,
+			slideNumber: true,
 
 			// Can be used to limit the contexts in which the slide number appears
 			// - "all":      Always show the slide number
@@ -94,10 +94,10 @@
 
 			// Add the current slide number to the URL hash so that reloading the
 			// page/copying the URL will return you to the same slide
-			hash: false,
+			hash: true,
 
 			// Push each slide change to the browser history.  Implies `hash: true`
-			history: false,
+			history: true,
 
 			// Enable keyboard shortcuts for navigation
 			keyboard: true,
@@ -268,7 +268,7 @@
 			pdfPageHeightOffset: -1,
 
 			// Number of slides away from the current that are visible
-			viewDistance: 3,
+			viewDistance: 1,
 
 			// The display mode that will be used to show slides
 			display: 'block',

@@ -1,49 +1,658 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="css/reset.css">
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+  <title>reveal.js</title>
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/monokai.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/custom.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="lib/css/monokai.css">
 
-		<script src="js/reveal.js"></script>
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+  </script>
+</head>
 
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true }
-				]
-			});
-		</script>
-	</body>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section class="center">
+        <h1>
+          Predictable Spell Casting
+          <small>Guiding your users with CSS animations</small>
+        </h1>
+        <h2>Martine Dowden</h2>
+      </section>
+
+      <!-- <section class="martine">
+        <h1>Martine Dowden</h1>
+      </section> -->
+
+      <section class="w3c" data-markdown>
+        # CSS Animations
+        ## Module Level 3
+        <div class="comment">20 March 2009</div>
+        ```CSS
+        @keyframe name {
+          from: {}
+          to: {}
+        }
+        elem {
+          animation: &#x3C;animation-name&#x3E; &#x3C;animation-duration&#x3E;
+          &#x3C;animation-timing-function&#x3E; &#x3C;animation-delay&#x3E;
+          &#x3C;animation-iteration-count&#x3E;
+          &#x3C;animation-iteration-direction&#x3E;
+          &#x3C;animation-fill-mode&#x3E; &#x3C;animation-play-state&#x3E;;
+        }
+        ```
+      </section>
+
+      <section data-markdown class="center">
+        # CSS Transitions
+        ## Module Level 3
+        <div class="comment">20 March 2009</div>
+        ```
+        transition: &#x3C;property&#x3E; &#x3C;duration&#x3E; &#x3C;timing-function&#x3E; &#x3C;delay&#x3E;;
+        ```
+      </section>
+
+      <section class="11y" data-markdown>
+        ## Guideline 2.3 Seizures and Physical Reactions
+        ### Do not design content in a way that is known to cause seizures or physical reactions.
+
+      </section>
+
+      <section class="loading">
+        <h1>Loading</h1>
+
+        <section>
+          <img src="./img/experimental-static.svg" alt="loading" />
+        </section>
+
+        <section>
+          <img src="./img/experimental.svg" alt="loading" />
+        </section>
+
+        <section>
+          <img id="experimentalFilling" alt="loading" src="./img/experimental-empty.svg" />
+          <button class="custom" onclick="reload('experimentalFilling')">Load</button>
+        </section>
+      </section>
+
+      <section class="graphics">
+        <h1>Animated Graphics</h1>
+        <section data-markdown>
+          ## Scalable Vector Graphics
+          ```XML
+          &#x3C;svg x="0px" y="0px" viewBox="0 0 94.5 118.5"&#x3E;
+            &#x3C;style type="text/css"&#x3E;
+
+              /* Put CSS HERE */
+
+            &#x3C;/style&#x3E;
+            &#x3C;path class="st1" d="M47.2,10"/&#x3E;
+            &#x3C;polygon class="st2" points="58.7,27.5 35.7,27.5 30.7,0 63.7,0"/&#x3E;
+          &#x3C;/svg>
+          
+          ```
+        </section>
+      </section>
+
+      <section class="page-transition">
+        <h1>Page Transition</h1>
+        <nav>
+          <ul>
+            <li><span><button onclick="handlePageTransitionPageChange(0)" class="custom">Tasks</button></span></li>
+            <li><span><button onclick="handlePageTransitionPageChange(1)" class="custom">Stats</button></span></li>
+            <li><span><button onclick="handlePageTransitionPageChange(2)" class="custom">Settings</button></span></li>
+          </ul>
+        </nav>
+        <div class="container">
+          <div class="default page-transition-panel tasks" id="pageTransitionStatic-0">
+            <div>
+              <img src="./img/tasks.svg" alt="">
+              <h2>Tasks</h2>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Number</th>
+                  <th>Date</th>
+                  <th>Name</th>
+                  <th>Task</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>2/11/2019</td>
+                  <td>Stegorim</td>
+                  <td>Brew Potions</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>3/7/2019</td>
+                  <td>Drekalis</td>
+                  <td>Prestidigitation Lab</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>11/17/2018</td>
+                  <td>Guillemette</td>
+                  <td>Organize Grimoirs</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>10/19/2018</td>
+                  <td>Ogorim</td>
+                  <td>Refresh Protection Spells</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>1/5/2019</td>
+                  <td>Ogorim</td>
+                  <td>Tutor Novices</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="default page-transition-panel stats hidden" id="pageTransitionStatic-1">
+            <h2>Stats</h2>
+            <img src="./img/graph.svg" alt="">
+          </div>
+
+          <div class="default page-transition-panel settings hidden" id="pageTransitionStatic-2">
+            <div>
+              <img src="./img/settings.svg" alt="">
+              <h2>Settings</h2>
+            </div>
+            <form>
+              <fieldset>
+                <legend>Animate</legend>
+                <label onclick="animatePageTransitions(true)"><input type="radio" name="animate"
+                    value="true">True</label>
+                <label onclick="animatePageTransitions(false)"><input type="radio" name="animate" value="false"
+                    checked="true">False</label>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="common-fate">
+        <h1>Common Fate</h1>
+
+        <section>
+          <p class="default">Elements are likely to be perceived as a unit if they move in the same direction.</p>
+        </section>
+
+        <section>
+          <div class="wrapper">
+            <div class="menu-container">
+              <h2>None</h2>
+              <button class="custom" onclick="expandMenu('staticMenu')">
+                <span>Favorite</span>
+              </button>
+              <ul class="menu" id="staticMenu">
+                <li><span>Coffee</span></li>
+                <li><span>Butter Beer</span></li>
+                <li><span>Sleep</span></li>
+              </ul>
+            </div>
+            <div class="menu-container">
+              <h2>Segmented</h2>
+              <button class="custom" onclick="expandMenu('segmentedMenu')">
+                <span>Langagues</span>
+              </button>
+              <ul class="menu segmented" id="segmentedMenu">
+                <li><span>Aklo</span></li>
+                <li><span>Sylvan</span></li>
+                <li><span>Orc</span></li>
+              </ul>
+            </div>
+            <div class="menu-container">
+              <h2>Smooth</h2>
+              <button class="custom" onclick="expandMenu('smoothMenu')">
+                <span>Play</span>
+              </button>
+              <ul class="menu smooth" id="smoothMenu">
+                <li><span>Fire</span></li>
+                <li><span>More Fire!</span></li>
+                <li><span>Make Go Boom</span></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section data-markdown>
+          ```css
+          .menuItem {
+          height: 0;
+          overflower: hidden;
+          transition: all 250ms ease-in-out;
+          }
+          .menu.expanded .menuItem {
+          height: 3rem;
+          }
+          ```
+          ```css
+          transition: all 250ms ease-in-out;
+          ```
+        </section>
+      </section>
+
+      <section class="micro-directional">
+        <h1>Micro Animations</h1>
+        <section class="common-fate">
+          <div class="wrapper">
+            <div class="menu-container">
+              <button class="custom" onclick="toggleMicroAnimation('microAnimationExpanded')">
+                <span>Play</span>
+                <span class="img-container">
+                  <svg viewBox="0 0 24 24">
+                    <path fill="#ffffff" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z" />
+                    <path d="M0 0h24v24H0z" fill="none" />
+                  </svg>
+                </span>
+              </button>
+              <ul class="menu smooth" id="microAnimationExpanded">
+                <li><span>Fire</span></li>
+                <li><span>More Fire!</span></li>
+                <li><span>Boom</span></li>
+              </ul>
+            </div>
+
+            <div class="menu-container">
+              <button class="custom" onclick="toggleMicroAnimation('microAnimationExpandedAnimated', true)">
+                <span>Potions</span>
+                <span class="img-container">
+                  <svg id="carret" viewBox="0 0 24 24">
+                    <path class="path" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z" />
+                    <path d="M0 0h24v24H0z" fill="none" />
+                  </svg>
+                </span>
+              </button>
+              <ul class="menu smooth" id="microAnimationExpandedAnimated">
+                <li><span>Coffee</span></li>
+                <li><span>Disguise</span></li>
+                <li><span>Vanish</span></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section data-markdown class="code">
+          ```css
+            button .arrow {
+              transition: all 250ms ease-in-out;
+            }
+
+            button.expanded .arrow {
+              transform: rotate(-180deg);
+            }
+          ```
+        </section>
+      </section>
+
+      <section class="to-view">
+        <h1>Bring Into View</h1>
+        <section class="page-transition">
+          <h2>Instant</h2>
+          <div class="default page-transition-panel tasks">
+            <nav>
+              <a class="skip-link">Skip Links</a>
+              <ul>
+                <li><span><a class="custom">Tasks</a></span></li>
+                <li><span><a class="custom">Stats</a></span></li>
+                <li><span><a class="custom">Settings</a></span></li>
+              </ul>
+            </nav>
+            <div class="header">
+              <img src="./img/tasks.svg" alt="">
+              <h2>Tasks</h2>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Number</th>
+                  <th>Date</th>
+                  <th>Name</th>
+                  <th>Task</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>2/11/2019</td>
+                  <td>Stegorim</td>
+                  <td>Brew Potions</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>3/7/2019</td>
+                  <td>Drekalis</td>
+                  <td>Prestidigitation Lab</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>11/17/2018</td>
+                  <td>Guillemette</td>
+                  <td>Organize Grimoirs</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>10/19/2018</td>
+                  <td>Ogorim</td>
+                  <td>Refresh Protection Spells</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>1/5/2019</td>
+                  <td>Ogorim</td>
+                  <td>Tutor Novices</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="page-transition">
+          <h2>Animated</h2>
+          <div class="default page-transition-panel tasks">
+            <nav>
+              <a class="skip-link animated">Skip Links</a>
+              <ul>
+                <li><span><a class="custom">Tasks</a></span></li>
+                <li><span><a class="custom">Stats</a></span></li>
+                <li><span><a class="custom">Settings</a></span></li>
+              </ul>
+            </nav>
+            <div class="header">
+              <img src="./img/tasks.svg" alt="">
+              <h2>Tasks</h2>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Number</th>
+                  <th>Date</th>
+                  <th>Name</th>
+                  <th>Task</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>2/11/2019</td>
+                  <td>Stegorim</td>
+                  <td>Brew Potions</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>3/7/2019</td>
+                  <td>Drekalis</td>
+                  <td>Prestidigitation Lab</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>11/17/2018</td>
+                  <td>Guillemette</td>
+                  <td>Organize Grimoirs</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>10/19/2018</td>
+                  <td>Ogorim</td>
+                  <td>Refresh Protection Spells</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>1/5/2019</td>
+                  <td>Ogorim</td>
+                  <td>Tutor Novices</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section data-markdown class="code">
+          ```css
+            .container {
+              position: relative;
+            }
+
+            .skip-link {
+              position: absolute;
+              top: 1rem;
+              left: -99rem;
+              transition: all 250ms ease-in-out;
+            }
+
+            .skip-link:focus {
+              left: 1rem;
+            }
+          ```
+        </section>
+      </section>
+
+      <section class="provenance">
+        <h1>Provenace</h1>
+        <section>
+          <h2>Instant</h2>
+          <button class="custom" type="button" onclick="openModal('provenanceModal', false)">
+            <span>Toggle Spell</span>
+          </button>
+          <div class="default modal" id="provenanceModal">
+            <h2>Revelio</h2>
+            <img src="./img/eye.svg" alt="">
+            <img src="./img/eye.svg" alt="">
+          </div>
+        </section>
+
+        <section>
+          <h2>Animated</h2>
+          <button class="custom" type="button" onclick="openModal('provenanceModalAnimated', true)">
+            <span>Toggle Spell</span>
+          </button>
+          <div class="default modal animated" id="provenanceModalAnimated">
+            <h2>Revelio</h2>
+            <img src="./img/eye.svg" alt="">
+            <img src="./img/eye.svg" alt="">
+          </div>
+        </section>
+
+        <section data-markdown class="code">
+          ## Transform Origin
+          ```CSS
+          .animated-element {
+            transform-origin: xPosition yPosition;
+          }
+          ```
+          ### example
+          ```CSS
+          .modal {
+            transform-origin: 50% 2rem;
+          }
+          ```
+        </section>
+      </section>
+
+      <section class="degenerate">
+        <h1>Into thin air</h1>
+        <section>
+          <h2>The problem with</h2>
+          <code>display: none</code>
+          <h3 class="fragment fade-in">a little bit of necromancy</h3>
+        </section>
+        <section data-markdown>
+          ## Making things disappear
+          ```HTML
+            &#x3C;button&#x3E;Toggle Spell&#x3C;/button&#x3E;
+            &#x3C;div class=&#x22;modal&#x22; id=&#x22;modal&#x22;&#x3E;Revelio&#x3C;/div&#x3E;
+          ```
+          ```CSS
+            .modal { 
+              transform: scale(0);
+              transition: all 250ms ease-in-out;
+              diplay: none;
+            }
+            .expanded {
+              display: block;
+              transform: scale(1);
+            }
+          ```
+        </section>
+
+        <section data-markdown>
+          ## The magic sauce
+          ```CSS
+            .close {
+              transform: scale(0);
+            }
+          ```
+          ```JavaScript
+            function close() {
+              const modal = document.getElementById('modal');
+              modal.classList.add('close');
+              setTimeout(() => {
+                modal.classList.remove('expanded');
+                modal.classList.remove('close');
+              }, 249);
+            }
+          ```
+        </section>
+      </section>
+
+      <section class="state">
+        <h1>State Change</h1>
+        <section>
+          <h2>Instant</h2>
+          <svg id="Layer_1" x="0px" y="0px" viewBox="0 0 94.5 118.5" style="enable-background:new 0 0 94.5 118.5;"
+            xml:space="preserve">
+            <style type="text/css">
+              .st1 {
+                fill: none;
+                stroke: #122849;
+                stroke-width: 0.5;
+                stroke-miterlimit: 10;
+              }
+              .st2 { fill: #E5DACF; }
+              .st3 { fill: #122849; }
+            </style>
+            <g>
+              <g>
+                <path class="st0 liquid" d="M14.4,57.5c-0.4,2.1-0.6,4.3-0.6,6.5c0,18.8,15.2,34,34,34s34-15.2,34-34c0-2-0.2-3.9-0.5-5.8
+                  c-7.9,2.7-19.5,4.3-32.5,4.3C34.7,62.5,22.2,60.5,14.4,57.5z" />
+              </g>
+              <path class="st1 liquid" d="M47.2,10" />
+              <polygon class="st2" points="58.7,27.5 35.7,27.5 30.7,0 63.7,0 	" />
+              <path d="M47.7,98.2c-18.9,0-34.2-15.4-34.2-34.2c0-13.1,7.3-24.8,19-30.7V12.1l0.3,0.2c0.1,0,6.5,2.8,14.4,2.8
+                c7.9,0,14.3-2.8,14.4-2.8l0.3-0.2v20.7C74.1,38.4,82,50.6,82,64C82,82.9,66.6,98.2,47.7,98.2z M33,12.9v20.8l-0.1,0.1
+                C21.2,39.4,14,51,14,64c0,18.6,15.1,33.8,33.8,33.8S81.5,82.6,81.5,64c0-13.2-7.8-25.3-19.9-30.8l-0.1-0.1V12.9
+                c-1.5,0.6-7.3,2.7-14.2,2.7S34.4,13.4,33,12.9z" />
+            </g>
+            <path class="st3" d="M51.6,118.5l-1-36.3c-0.9,0-1.9,0-2.9,0c-18.4,0-33-3.8-33.8-8.7l-0.1,0.1l-13.4,31L0,104.4l13.5-31.1l1-0.9
+              l0,0.7c0,4.8,14.9,8.7,33.3,8.7s33.3-3.9,33.3-8.6l0-0.1L81,71.6l13.5,30.8l-0.5,0.2L81.4,73.9c-1.4,4.4-14,7.9-30.3,8.3l1,36.3
+              L51.6,118.5z" />
+          </svg>
+        </section>
+        <section>
+          <h2>Animated</h2>
+          <svg id="Layer_1" x="0px" y="0px" viewBox="0 0 94.5 118.5" style="enable-background:new 0 0 94.5 118.5;"
+            xml:space="preserve">
+            <style type="text/css">
+              .st1 {
+                fill: none;
+                stroke: #122849;
+                stroke-width: 0.5;
+                stroke-miterlimit: 10;
+              }
+              .st2 { fill: #E5DACF; }
+              .st3 { fill: #122849; }
+            </style>
+            <g>
+              <g>
+                <path class="st0 liquid animated" d="M14.4,57.5c-0.4,2.1-0.6,4.3-0.6,6.5c0,18.8,15.2,34,34,34s34-15.2,34-34c0-2-0.2-3.9-0.5-5.8
+                c-7.9,2.7-19.5,4.3-32.5,4.3C34.7,62.5,22.2,60.5,14.4,57.5z" />
+              </g>
+              <path class="st1 liquid animated" d="M47.2,10" />
+              <polygon class="st2" points="58.7,27.5 35.7,27.5 30.7,0 63.7,0 	" />
+              <path d="M47.7,98.2c-18.9,0-34.2-15.4-34.2-34.2c0-13.1,7.3-24.8,19-30.7V12.1l0.3,0.2c0.1,0,6.5,2.8,14.4,2.8
+              c7.9,0,14.3-2.8,14.4-2.8l0.3-0.2v20.7C74.1,38.4,82,50.6,82,64C82,82.9,66.6,98.2,47.7,98.2z M33,12.9v20.8l-0.1,0.1
+              C21.2,39.4,14,51,14,64c0,18.6,15.1,33.8,33.8,33.8S81.5,82.6,81.5,64c0-13.2-7.8-25.3-19.9-30.8l-0.1-0.1V12.9
+              c-1.5,0.6-7.3,2.7-14.2,2.7S34.4,13.4,33,12.9z" />
+            </g>
+            <path class="st3" d="M51.6,118.5l-1-36.3c-0.9,0-1.9,0-2.9,0c-18.4,0-33-3.8-33.8-8.7l-0.1,0.1l-13.4,31L0,104.4l13.5-31.1l1-0.9
+            l0,0.7c0,4.8,14.9,8.7,33.3,8.7s33.3-3.9,33.3-8.6l0-0.1L81,71.6l13.5,30.8l-0.5,0.2L81.4,73.9c-1.4,4.4-14,7.9-30.3,8.3l1,36.3
+            L51.6,118.5z" />
+          </svg>
+        </section>
+      </section>
+
+      <section class="timing" data-markdown>
+        # Animation Timing
+        ## 250ms
+        up to 500ms for more complex animations
+      </section>
+
+      <section class="connect">
+        <h1>Thank You</h1>
+        <div class="background"></div>
+        <div class="line"></div>
+        <div class="container">
+          <div>
+            <div class="default img-container"><img src="./img/flower.svg" alt="Martine's portfolio" /></div>
+            <a href="http://martine.dev" target="_blank" rel="noopener">martine.dev</a>
+          </div>
+          <div>
+            <div class="default img-container"><img src="./img/twitter.svg" alt="twitter" /></div>
+            <a href="https://twitter.com/Martine_Dowden" target="_blank" rel="noopener">@Martine_Dowden</a>
+          </div>
+          <div>
+            <div class="default img-container"><img src="./img/octocat.png" alt="github" /></div>
+            <a href="https://github.com/martine-dowden" target="_blank" rel="noopener">martine-dowden</a>
+          </div>
+          <div>
+            <div class="default img-container"><img src="./img/linked-in.png" alt="linked-in" /></div>
+            <a href="https://www.linkedin.com/in/martinedowden/" target="_blank" rel="noopener">martinedowden</a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <footer>@Martine_Dowden</footer>
+
+  <script src="js/reveal.js"></script>
+
+  <script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+      dependencies: [
+        { src: 'plugin/markdown/marked.js' },
+        { src: 'plugin/markdown/markdown.js' },
+        { src: 'plugin/notes/notes.js', async: true },
+        { src: 'plugin/highlight/highlight.js', async: true }
+      ]
+    });
+  </script>
+  <script src="./js/custom.js"></script>
+</body>
+
 </html>
